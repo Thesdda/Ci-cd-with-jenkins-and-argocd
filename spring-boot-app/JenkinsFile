@@ -33,7 +33,7 @@ pipeline {
               withEnv(["GIT_REPO_NAME=Ci-cd-with-jenkins-and-argocd", "GIT_USER_NAME=Thesdda"]) {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                   sh '''
-                    #!/bin/bash/
+                    #!/bin/bash
                     git config user.email "ifidon19@gmail.com"
                     git config user.name "Thesdda"
                     sed -i "s/replaceImageTag/${env.BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
