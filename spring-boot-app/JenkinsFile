@@ -34,7 +34,7 @@ pipeline {
                 withCredentials([string(credentialsId: 'github', variable: 'GITHUB_TOKEN')]) {
                   sh '''
                     #!/bin/bash
-                    git config user.email "ifidon19@gmail.com"
+                    git config user.email "ifid.asikoko@gmail.com"
                     git config user.name "Thesdda"
                     sed -i "s/replaceImageTag/${env.BUILD_NUMBER}/g" spring-boot-app-manifests/deployment.yml
                     git add spring-boot-app-manifests/deployment.yml
